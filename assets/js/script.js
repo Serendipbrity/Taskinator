@@ -1,6 +1,6 @@
 var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");   
-
+var tasks = [];
 
 var taskFormHandler = function(event) {
     event.preventDefault();
@@ -17,11 +17,14 @@ var taskFormHandler = function(event) {
     // package up data as an object
     var taskDataObj = {
         name: taskNameInput,
-        type: taskTypeInput
-    };
+        type: taskTypeInput,
+        status: "to do"
+    }
 
     //send it as an argument to createTaskEl
     createTaskEl(taskDataObj);
+    console.log(taskDataObj);
+    console.log(taskDataObj.status);
     }
 
 
