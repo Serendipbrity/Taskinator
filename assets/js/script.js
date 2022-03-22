@@ -225,6 +225,10 @@ var deleteTask = function(taskId) {
       saveTasks();
   };
 
+  var saveTasks = function() {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+
 // create a new task
 formEl.addEventListener("submit", taskFormHandler); 
 // for edit and delete buttons
@@ -232,4 +236,4 @@ pageContentEl.addEventListener("click", taskButtonHandler);
 
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
 
-  loadTasks();
+  //loadTasks();
